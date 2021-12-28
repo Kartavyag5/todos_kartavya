@@ -11,7 +11,7 @@ function usePrevious(value){
 export default function Todo(props) {
 
     const [isEditing, setEditing] = useState(false);
-    const [newName, setNewName] = useState('');
+    const [newName, setNewName] = useState(props.name);
     const editFieldRef = useRef();
     const editButtonRef = useRef();
     const wasEditing = usePrevious(isEditing);
@@ -82,8 +82,9 @@ export default function Todo(props) {
           <div className="dropdown-container" tabindex="-1">
             <div type='button' className="three-dots btn" onClick={handleHidden} ></div>
               <div className="dropdown">
-                <button className='btn btn-warning' hidden={isHidden} onClick={() => setEditing(true)}><div>Edit<span className="visually-hidden">{props.name}</span></div></button>
-                <button href="#" className='btn btn-danger' hidden={isHidden} onClick={() => props.deleteTask(props.id)}><div>Delete<span className="visually-hidden">{props.name}</span></div></button>
+                <button className='btn btn-warning m-1' hidden={isHidden} onClick={() => setEditing(true)}><div>Edit<span className="visually-hidden">{props.name}</span></div></button>
+
+                <button className='btn btn-danger' hidden={isHidden} onClick={() => props.deleteTask(props.id)}><div>Delete<span className="visually-hidden">{props.name}</span></div></button>
                 
               </div>
             </div>

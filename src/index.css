@@ -315,15 +315,13 @@ a div {
 
 .dropdown {
   position: absolute;
-  /* right: 5px; */
-  background-color: rgb(255, 255, 255);
-  
-  
+  background-color: rgb(235, 224, 224);
   opacity: 0;
   z-index: 12;
   max-height: 0;
   transition: opacity 0.1s, z-index 0.1s, max-height 2s;
 }
+
 
 .dropdown-container:focus {
   outline: black;
@@ -332,7 +330,6 @@ a div {
 .dropdown-container:focus .dropdown {
   opacity: 2;
   z-index: 100;
-  /* max-height: 70vh; */
   color:rgb(0, 0, 0);
   transition: opacity 0.1s, z-index 0.1s, max-height 0.1s;
 }
