@@ -43,9 +43,14 @@ function App(props) {
 
 
 
-  function deleteTask(id){
-    const remainingTasks=tasks.filter(task => id!== task.id);
-    setTasks(remainingTasks); 
+  function deleteTask(id,name){
+    if(window.confirm("really want to delete task '"+name+"' ?")){
+      const remainingTasks=tasks.filter(task => id!== task.id);
+      setTasks(remainingTasks); 
+    }
+    else{
+
+    }
   }
 
   const taskList = tasks.filter(FILTER_MAP[filter]).map(task => (
