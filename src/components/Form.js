@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import add from "./icons/add.svg";
 
 
 function Form(props) {
@@ -37,9 +38,7 @@ function Form(props) {
                 value={name}
                 onChange={handleChange}
             />
-            <button type="submit" className="btn btn__primary btn__lg">
-            Add Task
-            </button>
+            <button type="submit" className="btn btn__primary btn__lg"><img src={add} alt="add" width="40" height="40" ></img> Add Task</button>
         </form>
     );
 }

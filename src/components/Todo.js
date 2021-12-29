@@ -1,4 +1,6 @@
 import React, {useEffect ,useRef, useState } from "react";
+import edit from './icons/edit.svg';
+import trash from './icons/delete.svg';
 
 function usePrevious(value){
   const ref= useRef();
@@ -18,7 +20,8 @@ export default function Todo(props) {
     const [isHidden, setHidden] = useState(true);
 
     function handleHidden(e){
-        setHidden(!isHidden)
+      setHidden(!isHidden);
+      
   }
 
     function handleChange(e){
@@ -79,14 +82,14 @@ export default function Todo(props) {
               {props.name}
             </label>
           </div>
+          
           <div className="dropdown-container" tabindex="-1">
             <div type='button' className="three-dots btn" onClick={handleHidden} ></div>
-              <div className="dropdown">
-                <button className='btn btn-warning m-1' hidden={isHidden} onClick={() => setEditing(true)}><div>Edit<span className="visually-hidden">{props.name}</span></div></button>
-
-                <button className='btn btn-danger' hidden={isHidden} onClick={() => props.deleteTask(props.id, props.name)}><div>Delete<span className="visually-hidden">{props.name}</span></div></button>
+                <button className='btn btn-warning m-2' hidden={isHidden} onClick={() => setEditing(true)}><div><img src={edit} alt='edit'></img>Edit<span className="visually-hidden">{props.name}</span></div></button>
+               
+                <button className='btn btn-danger' hidden={isHidden} onClick={() => props.deleteTask(props.id, props.name)}><div><img src={trash} alt='delete'></img>Delete<span className="visually-hidden">{props.name}</span></div></button>
                 
-              </div>
+              
             </div>
           {/* <div className="btn-group">
             <button 

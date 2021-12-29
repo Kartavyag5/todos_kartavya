@@ -67,6 +67,8 @@ body {
     line-height: 1.31579;
   }
 }
+
+
 /*END RESETS*/
 /* GLOBAL STYLES */
 .form-group > input[type="text"] {
@@ -210,9 +212,10 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 0%;
 }
 .todo > * {
-  flex: 0 0 100%;
+  flex: 0 0 90%;
 }
 
 .todo:hover {
@@ -295,6 +298,7 @@ body {
 .c-cb > input[type="checkbox"]:checked + label::after {
   opacity: 1;
 }
+/* dropdown styles */
 
 .three-dots:after {
   cursor: pointer;
@@ -322,6 +326,15 @@ a div {
   transition: opacity 0.1s, z-index 0.1s, max-height 2s;
 }
 
+.dropdown-item{
+  font-size: 60%;
+  
+}
+
+.dropdown-item:hover{
+  background:brighness(1.7);
+}
+
 
 .dropdown-container:focus {
   outline: black;
@@ -333,3 +346,4 @@ a div {
   color:rgb(0, 0, 0);
   transition: opacity 0.1s, z-index 0.1s, max-height 0.1s;
 }
+

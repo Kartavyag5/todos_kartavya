@@ -3,6 +3,7 @@ import Form from './components/Form';
 import FilterButton from './components/FilterButton';
 import Todo from './components/Todo';
 import { nanoid } from "nanoid";
+import logo from './components/icons/logo.png';
 
 const FILTER_MAP  = {
   All: () => true,
@@ -82,7 +83,7 @@ function App(props) {
 
   return (
     <div className="todoapp stack-large">
-      <h1 className='fw-bolder font-monospace'>Todo Matic</h1>
+      <h1 className='fw-bolder font-monospace'><img src={logo} alt='logo' width="50" height="50"></img>Todo Matic</h1>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         {filterList}
@@ -91,7 +92,7 @@ function App(props) {
         {headingText}
       </h2>
       <ul
-        role="list"
+        // role="list"
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading"
       >
